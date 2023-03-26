@@ -1,0 +1,42 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 8091
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - 'http://localhost:4200'
+            allowedHeaders:
+              - Content-Type
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - filters: StripPrefix=2
+          id: ms-artistas
+          predicates: Path=/api/artistas/**
+          uri: lb://ms-artistas
+        - filters: StripPrefix=2
+          id: ms-canciones
+          predicates: Path=/api/canciones/**
+          uri: lb://ms-canciones
+        - filters: StripPrefix=2
+          id: ms-albumes
+          predicates: Path=/api/albumes/**
+          uri: lb://ms-albumes
+
+loadbalancer:
+  ribbon:
+    enable: false
