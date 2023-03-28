@@ -19,6 +19,7 @@
         <module>ms-canciones</module>
         <module>ms-albumes</module>
         <module>ms-gateway</module>
+        <module>ms-generos</module>
     </modules>
 
     <groupId>com.dinotaurent</groupId>

@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/commons-artistas/pom.xml" />
         <option value="$PROJECT_DIR$/commons-canciones-albumes/pom.xml" />
         <option value="$PROJECT_DIR$/commons/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-generos/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-artistas-generos/pom.xml" />
       </list>
     </option>
   </component>

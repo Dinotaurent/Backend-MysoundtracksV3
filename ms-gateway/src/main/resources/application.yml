@@ -36,6 +36,10 @@ spring:
           id: ms-albumes
           predicates: Path=/api/albumes/**
           uri: lb://ms-albumes
+        - filters: StripPrefix=2
+          id: ms-generos
+          predicates: Path=/api/generos/**
+          uri: lb://ms-generos
 
 loadbalancer:
   ribbon:

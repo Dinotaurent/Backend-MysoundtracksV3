@@ -4,15 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons-artistas/src/main/java/com/dinotaurent/commonsartistas/models/entity/Artista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se inicia proyecto">
+      <change afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/src/main/java/com/dinotaurent/commonsartistas/models/entity/Artista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas/src/test/java/com/dinotaurent/commonsartistas/CommonsArtistasApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/test/java/com/dinotaurent/commonsartistas/CommonsArtistasApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/MsAlbumesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/MsAlbumesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-artistas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/MsArtistasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/MsArtistasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/MsCancionesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/MsCancionesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +72,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Proyectos de codigo/Java/MysoundtracksParent",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Proyectos de codigo/Java/MysoundtracksParent&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.MsGatewayApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
@@ -143,6 +160,18 @@
       <option name="presentableId" value="Default" />
       <updated>1679791036387</updated>
     </task>
+    <task id="LOCAL-00001" summary="Se inicia proyecto">
+      <created>1679822006794</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679822006794</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se inicia proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se inicia proyecto" />
   </component>
 </project>

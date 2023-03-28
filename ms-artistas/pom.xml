@@ -35,7 +35,7 @@
 
 		<dependency>
 			<groupId>com.dinotaurent</groupId>
-			<artifactId>commons-artistas</artifactId>
+			<artifactId>commons-artistas-generos</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

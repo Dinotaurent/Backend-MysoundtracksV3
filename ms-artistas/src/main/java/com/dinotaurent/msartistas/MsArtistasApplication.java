@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 
 @SpringBootApplication
 @EnableFeignClients
-@EntityScan({"com.dinotaurent.commonsartistas.models.entity","com.dinotaurent.commonscancionesalbumes.models.entity"})
+@EntityScan({"com.dinotaurent.commonsartistasgeneros.models.entity","com.dinotaurent.commonscancionesalbumes.models.entity"})
 public class MsArtistasApplication {
 
 	public static void main(String[] args) {
