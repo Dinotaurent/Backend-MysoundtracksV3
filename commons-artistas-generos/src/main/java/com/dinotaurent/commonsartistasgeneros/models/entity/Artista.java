@@ -3,10 +3,12 @@ package com.dinotaurent.commonsartistasgeneros.models.entity;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -23,11 +25,18 @@ public class Artista {
     @Size(min = 3, max = 10)
     private String nombre;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @Transient
     private List<Cancion> canciones;
+    @JsonIgnoreProperties(value = {"artista"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CancionesArtistas> cancionesArtista;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @Transient
     private List<Album> albumes;
+
+    @JsonIgnoreProperties(value = {"artista"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AlbumesArtistas> albumesArtista;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Genero> generos;
@@ -41,8 +50,16 @@ public class Artista {
     @JsonIgnore
     private byte[] foto;
 
+    public Artista() {
+        this.albumes = new ArrayList<>();
+        this.albumesArtista = new ArrayList<>();
+        this.canciones = new ArrayList<>();
+        this.cancionesArtista = new ArrayList<>();
+        this.generos = new ArrayList<>();
+    }
+
     @PrePersist
-    public void prePersist(){
+    public void prePersist() {
         this.createAt = new Date();
     }
 
@@ -94,31 +111,31 @@ public class Artista {
         this.foto = foto;
     }
 
-    public Integer getFotoHashCode(){
+    public Integer getFotoHashCode() {
         return this.foto != null ? Arrays.hashCode(this.foto) : null;
     }
 
-    public void addCancion(Cancion cancion){
+    public void addCancion(Cancion cancion) {
         this.canciones.add(cancion);
     }
 
-    public void removeCancion(Cancion cancion){
+    public void removeCancion(Cancion cancion) {
         this.canciones.remove(cancion);
     }
 
-    public void addAlbum(Album album){
+    public void addAlbum(Album album) {
         this.albumes.add(album);
     }
 
-    public void removeAlbum(Album album){
+    public void removeAlbum(Album album) {
         this.albumes.remove(album);
     }
 
-    public void addGenero(Genero genero){
+    public void addGenero(Genero genero) {
         this.generos.add(genero);
     }
 
-    public void removeGenero(Genero genero){
+    public void removeGenero(Genero genero) {
         this.generos.remove(genero);
     }
 
