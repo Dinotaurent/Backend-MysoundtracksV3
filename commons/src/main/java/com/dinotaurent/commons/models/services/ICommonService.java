@@ -17,4 +17,6 @@ public interface ICommonService<E> {
     E save(E entity);
 
     void deleteById(Long id);
+
+    void setFoto(byte[] foto);
 }

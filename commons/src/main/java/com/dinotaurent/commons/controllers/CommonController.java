@@ -8,7 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -49,6 +51,14 @@ public class CommonController<E, S extends ICommonService<E>> {
             return ResponseEntity.status(HttpStatus.CREATED).body(entityBd);
         }
 
+    }
+
+    @PostMapping("/crear-con-foto")
+    public ResponseEntity<?> crearConFoto(@Valid E entity, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
+        if(!archivo.isEmpty()){
+            service.setFoto(archivo.getBytes());
+        }
+        return crear(entity,result);
     }
 
     @DeleteMapping("/{id}")
