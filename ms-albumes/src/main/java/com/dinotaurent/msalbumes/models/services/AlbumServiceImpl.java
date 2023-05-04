@@ -17,10 +17,10 @@ import java.util.List;
 public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implements IAlbumService {
 
     @Autowired
-    IGeneroFeingClient generoClient;
+    private IGeneroFeingClient generoClient;
 
     @Autowired
-    IArtistaFeingClient artistaClient;
+    private IArtistaFeingClient artistaClient;
 
     @Override
     @Transactional(readOnly = true)
@@ -29,25 +29,32 @@ public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implem
     }
 
     @Override
-    public List<Album> findAllByOrderByIdAsc() {
+    @Transactional(readOnly = true)
+    public List<Album> findAll() {
         return dao.findAllByOrderByIdAsc();
     }
 
     @Override
-    public Page<Album> findAllByOrderByIdAsc(Pageable pageable) {
-        return findAllByOrderByIdAsc(pageable);
+    @Transactional(readOnly = true)
+    public Page<Album> findAll(Pageable pageable) {
+        return dao.findAllByOrderByIdAsc(pageable);
     }
 
     @Override
-    @Transactional
     public void eliminarAlbumGenero(Long albumId) {
         generoClient.eliminarAlbumGenero(albumId);
+    }
 
+    @Override
+    public void eliminarAlbumArtista(Long albumId) {
+        artistaClient.eliminarAlbumArtista(albumId);
     }
 
     @Override
     @Transactional
-    public void eliminarAlbumArtista(Long albumId) {
-        artistaClient.eliminarAlbumArtista(albumId);
+    public void deleteById(Long id) {
+        super.deleteById(id);
+        this.generoClient.eliminarAlbumGenero(id);
+        this.artistaClient.eliminarAlbumArtista(id);
     }
 }

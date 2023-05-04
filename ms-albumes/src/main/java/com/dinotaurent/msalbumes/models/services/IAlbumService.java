@@ -13,10 +13,6 @@ public interface IAlbumService extends ICommonService<Album> {
 
     List<Album> findByNombreContaining(String termino);
 
-    List<Album> findAllByOrderByIdAsc();
-
-    Page<Album> findAllByOrderByIdAsc(Pageable pageable);
-
     void eliminarAlbumGenero(Long albumId);
 
     void eliminarAlbumArtista(Long albumId);

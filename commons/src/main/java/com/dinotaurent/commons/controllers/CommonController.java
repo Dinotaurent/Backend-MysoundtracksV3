@@ -53,13 +53,13 @@ public class CommonController<E, S extends ICommonService<E>> {
 
     }
 
-    @PostMapping("/crear-con-foto")
-    public ResponseEntity<?> crearConFoto(@Valid E entity, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
-        if(!archivo.isEmpty()){
-            service.setFoto(archivo.getBytes());
-        }
-        return crear(entity,result);
-    }
+//    @PostMapping("/crear-con-foto")
+//    public ResponseEntity<?> crearConFoto(@Valid E entity, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
+//        if(!archivo.isEmpty()){
+//            service.setFoto(archivo.getBytes());
+//        }
+//        return crear(entity,result);
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {

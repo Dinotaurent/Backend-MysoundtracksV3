@@ -18,5 +18,5 @@ public interface ICommonService<E> {
 
     void deleteById(Long id);
 
-    void setFoto(byte[] foto);
+//    void setFoto(byte[] foto);
 }

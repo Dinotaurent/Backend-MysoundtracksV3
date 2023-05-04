@@ -42,9 +42,9 @@ public class CommonServiceImpl<E, R extends CrudAndSortingRepository<E, Long>> i
         dao.deleteById(id);
     }
 
-    @Override
-    @Transactional
-    public void setFoto(byte[] foto) {
-        dao.setFoto(foto);
-    }
+//    @Override
+//    @Transactional
+//    public void setFoto(byte[] foto) {
+//        dao.setFoto(foto);
+//    }
 }
