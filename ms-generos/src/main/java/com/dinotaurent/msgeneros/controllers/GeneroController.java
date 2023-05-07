@@ -2,13 +2,18 @@ package com.dinotaurent.msgeneros.controllers;
 
 import com.dinotaurent.commons.controllers.CommonController;
 import com.dinotaurent.commonsartistasgeneros.models.entity.Genero;
+import com.dinotaurent.commonsartistasgeneros.models.entity.GeneroAlbum;
+import com.dinotaurent.commonsartistasgeneros.models.entity.GeneroCancion;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.dinotaurent.msgeneros.models.services.IGeneroService;
 import jakarta.validation.Valid;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +23,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class GeneroController extends CommonController<Genero, IGeneroService> {
 
     @GetMapping("/")
@@ -25,7 +31,7 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
     public ResponseEntity<?> listar() {
         List<Genero> generos = service.findAll();
 
-        generos = generos.stream().map(g -> {
+        generos = generos.stream().peek(g -> {
             g.getGeneroAlbum().forEach(gA -> {
                 Album album = new Album();
                 album.setId(gA.getId());
@@ -38,7 +44,7 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
                 g.addCancion(cancion);
             });
 
-            return g;
+//            return g;
         }).toList();
 
         return ResponseEntity.ok(generos);
@@ -63,6 +69,17 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
             return g;
         });
         return ResponseEntity.ok(generos);
+    }
+
+    @GetMapping("/ver-foto/{id}")
+    public ResponseEntity<?> verFoto(@PathVariable Long id) {
+        Optional<Genero> o = service.findById(id);
+
+        if (o.isPresent() && o.get().getFoto() != null) {
+            Resource imagen = new ByteArrayResource(o.get().getFoto());
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
+        }
+        return ResponseEntity.notFound().build();
     }
 
     @PostMapping("/crear-con-foto")
@@ -117,7 +134,12 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
 
         if (o.isPresent()) {
             Genero generoBd = o.get();
-            albumes.forEach(generoBd::addAlbum);
+            albumes.forEach( a -> {
+                GeneroAlbum generoAlbum = new GeneroAlbum();
+                generoAlbum.setAlbumId(a.getId());
+                generoAlbum.setGenero(generoBd);
+                generoBd.addGeneroAlbum(generoAlbum);
+            });
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(generoBd));
         }
         return ResponseEntity.notFound().build();
@@ -129,7 +151,9 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
 
         if (o.isPresent()) {
             Genero generoBd = o.get();
-            generoBd.removeAlbum(album);
+            GeneroAlbum generoAlbum = new GeneroAlbum();
+            generoAlbum.setAlbumId(album.getId());
+            generoBd.removeGeneroAlbum(generoAlbum);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(generoBd));
         }
         return ResponseEntity.notFound().build();
@@ -141,8 +165,12 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
 
         if (o.isPresent()) {
             Genero generoBd = o.get();
-            canciones.forEach(generoBd::addCancion);
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(generoBd));
+            canciones.forEach( c -> {
+                GeneroCancion generoCancion = new GeneroCancion();
+                generoCancion.setCancionId(c.getId());
+                generoCancion.setGenero(generoBd);
+                generoBd.addGeneroCancion(generoCancion);
+            });
         }
         return ResponseEntity.notFound().build();
     }
@@ -153,7 +181,9 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
 
         if (o.isPresent()) {
             Genero generoBd = o.get();
-            generoBd.removeCancion(cancion);
+            GeneroCancion generoCancion = new GeneroCancion();
+            generoCancion.setCancionId(cancion.getId());
+            generoBd.removeGeneroCancion(generoCancion);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(generoBd));
         }
         return ResponseEntity.notFound().build();
