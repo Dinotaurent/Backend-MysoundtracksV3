@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -30,8 +31,18 @@ public class Album {
     @JsonIgnore
     private byte[] foto;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_creacion")
+    @JsonIgnore
+    private Date createAt;
+
     public Album(){
         this.canciones = new ArrayList<>();
+    }
+
+    @PrePersist
+    public void prePersist() {
+        this.createAt = new Date();
     }
 
     public String getNombre() {
@@ -57,6 +68,15 @@ public class Album {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
     public void addCancion(Cancion cancion) {
         this.canciones.add(cancion);
     }

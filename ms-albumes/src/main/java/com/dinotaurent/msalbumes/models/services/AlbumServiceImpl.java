@@ -24,12 +24,6 @@ public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implem
 
     @Override
     @Transactional(readOnly = true)
-    public List<Album> findByNombreContaining(String termino) {
-        return dao.findByNombreContaining(termino);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
     public List<Album> findAll() {
         return dao.findAllByOrderByIdAsc();
     }

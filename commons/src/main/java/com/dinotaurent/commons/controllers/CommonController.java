@@ -8,9 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -40,6 +37,11 @@ public class CommonController<E, S extends ICommonService<E>> {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/buscar-x-nombre/{termino}")
+    public ResponseEntity<?> buscarXNombre(@PathVariable String termino){
+        return ResponseEntity.ok().body(service.findByNombreContaining(termino));
+    }
+
 
     @PostMapping("/")
     public ResponseEntity<?> crear(@Valid @RequestBody E entity, BindingResult result) {
@@ -52,14 +54,6 @@ public class CommonController<E, S extends ICommonService<E>> {
         }
 
     }
-
-//    @PostMapping("/crear-con-foto")
-//    public ResponseEntity<?> crearConFoto(@Valid E entity, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
-//        if(!archivo.isEmpty()){
-//            service.setFoto(archivo.getBytes());
-//        }
-//        return crear(entity,result);
-//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {

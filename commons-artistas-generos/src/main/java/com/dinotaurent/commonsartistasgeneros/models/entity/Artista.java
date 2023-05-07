@@ -29,14 +29,14 @@ public class Artista {
     private List<Cancion> canciones;
     @JsonIgnoreProperties(value = {"artista"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CancionesArtistas> cancionesArtista;
+    private List<ArtistaCancion> artistaCancion;
 
     @Transient
     private List<Album> albumes;
 
     @JsonIgnoreProperties(value = {"artista"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AlbumesArtistas> albumesArtista;
+    private List<ArtistaAlbum> artistaAlbum;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Genero> generos;
@@ -52,9 +52,9 @@ public class Artista {
 
     public Artista() {
         this.albumes = new ArrayList<>();
-        this.albumesArtista = new ArrayList<>();
+        this.artistaAlbum = new ArrayList<>();
         this.canciones = new ArrayList<>();
-        this.cancionesArtista = new ArrayList<>();
+        this.artistaCancion = new ArrayList<>();
         this.generos = new ArrayList<>();
     }
 
@@ -147,6 +147,37 @@ public class Artista {
         this.id = id;
     }
 
+    public List<ArtistaCancion> getArtistaCancion() {
+        return artistaCancion;
+    }
+
+    public void setArtistaCancion(List<ArtistaCancion> artistaCancion) {
+        this.artistaCancion = artistaCancion;
+    }
+
+    public List<ArtistaAlbum> getArtistaAlbum() {
+        return artistaAlbum;
+    }
+
+    public void setArtistaAlbum(List<ArtistaAlbum> artistaAlbum) {
+        this.artistaAlbum = artistaAlbum;
+    }
+
+    public void addArtistaAlbum(ArtistaAlbum artistaAlbum) {
+        this.artistaAlbum.add(artistaAlbum);
+    }
+
+    public void removeArtistaAlbum(ArtistaAlbum artistaAlbum) {
+        this.artistaAlbum.remove(artistaAlbum);
+    }
+
+    public void addArtistaCancion(ArtistaCancion artistaCancion) {
+        this.artistaCancion.add(artistaCancion);
+    }
+
+    public void removeArtistaCancion(ArtistaCancion artistaCancion) {
+        this.artistaCancion.remove(artistaCancion);
+    }
 
     @Override
     public boolean equals(Object obj) {

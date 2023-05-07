@@ -4,15 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Varios arreglos y adelanto de ms-albumes">
-      <change afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" afterDir="false" />
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Otros arreglos y adelanto de ms-albumes">
+      <change afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/dao/IGeneroDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/GeneroServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/IGeneroService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/AlbumesArtistas.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/ArtistaAlbum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/AlbumesGeneros.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/GeneroAlbum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/CancionesArtistas.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/ArtistaCancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/CancionesGeneros.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/GeneroCancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/controllers/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CommonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CommonServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/dao/IAlbumDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/dao/IAlbumDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-generos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681759855932</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Otros arreglos y adelanto de ms-albumes">
+      <created>1683225186284</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683225186284</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -189,7 +210,8 @@
     <MESSAGE value="Se agrega el ms-generos y se crear el entity Artista" />
     <MESSAGE value="Se completan entities y se agrega el controlador commons" />
     <MESSAGE value="Varios arreglos y adelanto de ms-albumes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Varios arreglos y adelanto de ms-albumes" />
+    <MESSAGE value="Otros arreglos y adelanto de ms-albumes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Otros arreglos y adelanto de ms-albumes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

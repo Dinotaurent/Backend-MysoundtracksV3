@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.Arrays;
+import java.util.Date;
 
 @Entity
 @Table(name = "canciones")
@@ -28,6 +29,16 @@ public class Cancion {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "album_id")
     private Album album;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_creacion")
+    @JsonIgnore
+    private Date createAt;
+
+    @PrePersist
+    public void prePersist() {
+        this.createAt = new Date();
+    }
 
     public Long getId() {
         return id;
@@ -63,6 +74,14 @@ public class Cancion {
 
     public void setAlbum(Album album) {
         this.album = album;
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
     @Override

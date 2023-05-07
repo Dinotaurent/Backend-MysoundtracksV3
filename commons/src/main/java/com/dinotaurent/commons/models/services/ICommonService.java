@@ -18,5 +18,6 @@ public interface ICommonService<E> {
 
     void deleteById(Long id);
 
-//    void setFoto(byte[] foto);
+    List<E> findByNombreContaining(String termino);
+
 }

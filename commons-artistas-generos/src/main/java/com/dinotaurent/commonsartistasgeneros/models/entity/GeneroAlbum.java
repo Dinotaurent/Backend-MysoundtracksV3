@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "albumes_generos")
-public class AlbumesGeneros {
+public class GeneroAlbum {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -14,7 +14,7 @@ public class AlbumesGeneros {
     @Column(name = "album_id", unique = true)
     private Long albumId;
 
-    @JsonIgnoreProperties(value = {"albumesGenero"})
+    @JsonIgnoreProperties(value = {"generoAlbum"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "genero_id")
     private Genero genero;
@@ -43,15 +43,17 @@ public class AlbumesGeneros {
         this.genero = genero;
     }
 
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof AlbumesGeneros aG)) {
+        if (!(obj instanceof GeneroAlbum gA)) {
             return false;
         }
-        return this.albumId != null && this.albumId.equals(aG.getAlbumId());
+        return this.albumId != null && this.albumId.equals(gA.getAlbumId());
     }
 
 }

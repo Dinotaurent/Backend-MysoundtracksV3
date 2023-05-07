@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "canciones_generos")
-public class CancionesGeneros {
+public class GeneroCancion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -14,7 +14,7 @@ public class CancionesGeneros {
     @Column(name = "cancion_id",unique = true)
     private Long cancionId;
 
-    @JsonIgnoreProperties(value = {"cancionesGenero"})
+    @JsonIgnoreProperties(value = {"generoCancion"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "genero_id")
     private Genero genero;
@@ -48,10 +48,10 @@ public class CancionesGeneros {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof CancionesGeneros cG)) {
+        if (!(obj instanceof GeneroCancion gC)) {
             return false;
         }
-        return this.cancionId != null && this.cancionId.equals(cG.getCancionId());
+        return this.cancionId != null && this.cancionId.equals(gC.getCancionId());
     }
 
 }

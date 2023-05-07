@@ -30,14 +30,14 @@ public class Genero {
 
     @JsonIgnoreProperties(value = {"genero"})
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AlbumesGeneros> albumesGenero;
+    private List<GeneroAlbum> generoAlbum;
 
     @Transient
     private List<Cancion> canciones;
 
     @JsonIgnoreProperties(value = {"genero"})
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CancionesGeneros> cancionesGenero;
+    private List<GeneroCancion> generoCancion;
 
 
     @Temporal(TemporalType.DATE)
@@ -51,9 +51,9 @@ public class Genero {
 
     public Genero(){
         this.albumes = new ArrayList<>();
-        this.albumesGenero = new ArrayList<>();
+        this.generoAlbum = new ArrayList<>();
         this.canciones = new ArrayList<>();
-        this.cancionesGenero = new ArrayList<>();
+        this.generoCancion = new ArrayList<>();
     }
 
     @PrePersist
@@ -111,6 +111,54 @@ public class Genero {
 
     public void removeAlbum(Album album) {
         this.albumes.remove(album);
+    }
+
+    public List<Album> getAlbumes() {
+        return albumes;
+    }
+
+    public void setAlbumes(List<Album> albumes) {
+        this.albumes = albumes;
+    }
+
+    public List<GeneroAlbum> getGeneroAlbum() {
+        return generoAlbum;
+    }
+
+    public void setGeneroAlbum(List<GeneroAlbum> generoAlbum) {
+        this.generoAlbum = generoAlbum;
+    }
+
+    public List<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(List<Cancion> canciones) {
+        this.canciones = canciones;
+    }
+
+    public List<GeneroCancion> getGeneroCancion() {
+        return generoCancion;
+    }
+
+    public void setGeneroCancion(List<GeneroCancion> generoCancion) {
+        this.generoCancion = generoCancion;
+    }
+
+    public void addGeneroAlbum(GeneroAlbum generoAlbum) {
+        this.generoAlbum.add(generoAlbum);
+    }
+
+    public void removeGeneroAlbum(GeneroAlbum generoAlbum) {
+        this.generoAlbum.remove(generoAlbum);
+    }
+
+    public void addGeneroCancion(GeneroCancion generoCancion) {
+        this.generoCancion.add(generoCancion);
+    }
+
+    public void removeGeneroCancion(GeneroCancion generoCancion) {
+        this.generoCancion.remove(generoCancion);
     }
 
     @Override

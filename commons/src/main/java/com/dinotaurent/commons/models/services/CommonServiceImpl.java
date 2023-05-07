@@ -31,6 +31,12 @@ public class CommonServiceImpl<E, R extends CrudAndSortingRepository<E, Long>> i
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public List<E> findByNombreContaining(String termino) {
+        return dao.findByNombreContaining(termino);
+    }
+
+    @Override
     @Transactional
     public E save(E entity) {
         return dao.save(entity);
@@ -42,9 +48,4 @@ public class CommonServiceImpl<E, R extends CrudAndSortingRepository<E, Long>> i
         dao.deleteById(id);
     }
 
-//    @Override
-//    @Transactional
-//    public void setFoto(byte[] foto) {
-//        dao.setFoto(foto);
-//    }
 }
