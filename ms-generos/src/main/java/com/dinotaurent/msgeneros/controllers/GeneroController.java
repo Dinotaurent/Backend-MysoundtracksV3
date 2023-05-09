@@ -43,8 +43,6 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
                 cancion.setId(gC.getId());
                 g.addCancion(cancion);
             });
-
-//            return g;
         }).toList();
 
         return ResponseEntity.ok(generos);
