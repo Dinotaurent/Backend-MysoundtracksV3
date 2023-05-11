@@ -2,8 +2,8 @@ package com.dinotaurent.msalbumes.models.services;
 
 import com.dinotaurent.commons.models.services.CommonServiceImpl;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
-import com.dinotaurent.msalbumes.clients.IArtistaFeingClient;
-import com.dinotaurent.msalbumes.clients.IGeneroFeingClient;
+import com.dinotaurent.msalbumes.clients.IArtistaAlbumFeingClient;
+import com.dinotaurent.msalbumes.clients.IGeneroAlbumFeingClient;
 import com.dinotaurent.msalbumes.models.dao.IAlbumDao;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +17,10 @@ import java.util.List;
 public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implements IAlbumService {
 
     @Autowired
-    private IGeneroFeingClient generoClient;
+    private IGeneroAlbumFeingClient generoClient;
 
     @Autowired
-    private IArtistaFeingClient artistaClient;
+    private IArtistaAlbumFeingClient artistaClient;
 
     @Override
     @Transactional(readOnly = true)
@@ -35,20 +35,20 @@ public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implem
     }
 
     @Override
-    public void eliminarAlbumGenero(Long albumId) {
-        generoClient.eliminarAlbumGenero(albumId);
+    public void eliminarGeneroAlbum(Long albumId) {
+        generoClient.eliminarGeneroAlbum(albumId);
     }
 
     @Override
-    public void eliminarAlbumArtista(Long albumId) {
-        artistaClient.eliminarAlbumArtista(albumId);
+    public void eliminarArtistaAlbum(Long albumId) {
+        artistaClient.eliminarArtistaAlbum(albumId);
     }
 
     @Override
     @Transactional
     public void deleteById(Long id) {
         super.deleteById(id);
-        this.generoClient.eliminarAlbumGenero(id);
-        this.artistaClient.eliminarAlbumArtista(id);
+        this.generoClient.eliminarGeneroAlbum(id);
+        this.artistaClient.eliminarArtistaAlbum(id);
     }
 }

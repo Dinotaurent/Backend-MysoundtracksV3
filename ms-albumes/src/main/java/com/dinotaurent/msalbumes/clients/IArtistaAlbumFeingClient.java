@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "ms-artistas")
-public interface IArtistaFeingClient {
+public interface IArtistaAlbumFeingClient {
 
-    @DeleteMapping("/eliminar-albumArtista/{albumId}")
-    void eliminarAlbumArtista(@PathVariable Long albumId);
+    @DeleteMapping("/eliminar-artistaAlbum/{albumId}")
+    void eliminarArtistaAlbum(@PathVariable Long albumId);
 }

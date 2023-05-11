@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public interface IAlbumService extends ICommonService<Album> {
-    void eliminarAlbumGenero(Long albumId);
+    void eliminarGeneroAlbum(Long albumId);
 
-    void eliminarAlbumArtista(Long albumId);
+    void eliminarArtistaAlbum(Long albumId);
 }
