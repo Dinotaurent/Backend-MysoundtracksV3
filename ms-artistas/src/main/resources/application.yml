@@ -1,26 +1,30 @@
 eureka:
-    client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka
-    instance:
-        instance-id: ${spring.application.name}:${random.value}
-        prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+    prefer-ip-address: true
 logging:
-    level:
-        org:
-            hibernate:
-                SQL: debug
+  level:
+    org:
+      hibernate:
+        SQL: debug
 server:
-    port: ${PORT:0}
+  port: ${PORT:0}
 spring:
-    application:
-        name: ms-artistas
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: admin
-        url: jdbc:mysql://localhost/bd-mysoundtracks?useSSL=false
-        username: root
-    jpa:
-        database-platform: org.hibernate.dialect.MySQL8Dialect
-        hibernate:
-            ddl-auto: update
+  application:
+    name: ms-artistas
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://localhost/bd-mysoundtracks?useSSL=false
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 4MB
+      max-request-size: 4MB

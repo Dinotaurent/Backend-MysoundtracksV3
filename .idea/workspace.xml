@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="adelanto de ms-artistas">
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/clients/IArtistaCancionFeingClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/clients/IGeneroCancionFeingClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/dao/ICancionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/CancionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/ICancionService.java" afterDir="false" />
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IArtistaFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IArtistaAlbumFeingClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IGeneroFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IGeneroAlbumFeingClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Proyectos de codigo/Java/Backend-ms-cursos-parent-master",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Proyectos de codigo/Java/Backend-ms-cursos-parent-master&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.MsCancionesApplication">
+}</component>
+  <component name="RunManager" selected="Application.MsGatewayApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
       <module name="ms-albumes" />
@@ -214,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683600635005</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adelanto de ms-canciones">
+      <created>1683772350845</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683772350845</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -226,7 +224,8 @@
     <MESSAGE value="muchos cambios y adelanto de ms-generos" />
     <MESSAGE value="arreglos a ms-generos" />
     <MESSAGE value="adelanto de ms-artistas" />
-    <option name="LAST_COMMIT_MESSAGE" value="adelanto de ms-artistas" />
+    <MESSAGE value="adelanto de ms-canciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="adelanto de ms-canciones" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
