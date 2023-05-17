@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="terminado">
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se agrega mayor capacidad de almacenamiento para la foto de todos los microservicios.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/controllers/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/controllers/CommonController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8aa93c52-4f03-45c6-8b4d-b4f186ab1edb" />
+        <option name="url" value="https://github.com/Dinotaurent/Backend-MysoundtracksV3.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -212,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683772350845</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Se agrega mayor capacidad de almacenamiento para la foto de todos los microservicios.">
+      <created>1683998779217</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683998779217</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,7 +243,8 @@
     <MESSAGE value="arreglos a ms-generos" />
     <MESSAGE value="adelanto de ms-artistas" />
     <MESSAGE value="adelanto de ms-canciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="adelanto de ms-canciones" />
+    <MESSAGE value="Se agrega mayor capacidad de almacenamiento para la foto de todos los microservicios." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega mayor capacidad de almacenamiento para la foto de todos los microservicios." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

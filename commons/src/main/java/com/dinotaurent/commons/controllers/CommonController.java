@@ -69,7 +69,7 @@ public class CommonController<E, S extends ICommonService<E>> {
     protected ResponseEntity<?> mostrarErrores(BindingResult result) {
         Map<String, Object> errores = new HashMap<>();
         result.getFieldErrors().forEach(err -> {
-            errores.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
+            errores.put(err.getField(),err.getField() + " " + err.getDefaultMessage());
         });
 
         return ResponseEntity.badRequest().body(errores);
