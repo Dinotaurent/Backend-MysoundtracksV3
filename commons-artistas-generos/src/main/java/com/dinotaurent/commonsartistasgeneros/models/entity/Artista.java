@@ -38,7 +38,11 @@ public class Artista {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ArtistaAlbum> artistaAlbum;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("artistas")
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "artistas_generos",
+            joinColumns = @JoinColumn(name = "artista_id"),
+            inverseJoinColumns = @JoinColumn(name = "genero_id"))
     private List<Genero> generos;
 
     @Temporal(TemporalType.DATE)
@@ -133,6 +137,7 @@ public class Artista {
 
     public void addGenero(Genero genero) {
         this.generos.add(genero);
+        genero.getArtistas().add(this);
     }
 
     public void removeGenero(Genero genero) {

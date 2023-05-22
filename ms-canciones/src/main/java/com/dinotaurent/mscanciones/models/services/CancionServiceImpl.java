@@ -3,7 +3,6 @@ package com.dinotaurent.mscanciones.models.services;
 import com.dinotaurent.commons.models.services.CommonServiceImpl;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.dinotaurent.mscanciones.clients.IArtistaCancionFeingClient;
-import com.dinotaurent.mscanciones.clients.IGeneroCancionFeingClient;
 import com.dinotaurent.mscanciones.models.dao.ICancionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,9 +16,6 @@ import java.util.List;
 public class CancionServiceImpl extends CommonServiceImpl<Cancion, ICancionDao> implements ICancionService {
     @Autowired
     private IArtistaCancionFeingClient artistaFeingClient;
-
-    @Autowired
-    private IGeneroCancionFeingClient generoFeingClient;
 
     @Override
     @Transactional(readOnly = true)
@@ -39,16 +35,9 @@ public class CancionServiceImpl extends CommonServiceImpl<Cancion, ICancionDao> 
     }
 
     @Override
-    public void eliminarGeneroCancion(Long cancionId) {
-        generoFeingClient.eliminarGeneroCancion(cancionId);
-    }
-
-
-    @Override
     @Transactional
     public void deleteById(Long id) {
         super.deleteById(id);
         this.artistaFeingClient.eliminarArtistaCancion(id);
-        this.generoFeingClient.eliminarGeneroCancion(id);
     }
 }

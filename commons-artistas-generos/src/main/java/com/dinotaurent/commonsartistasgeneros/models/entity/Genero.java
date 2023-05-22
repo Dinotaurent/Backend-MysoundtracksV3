@@ -1,7 +1,6 @@
 package com.dinotaurent.commonsartistasgeneros.models.entity;
 
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
-import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -32,12 +31,9 @@ public class Genero {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<GeneroAlbum> generoAlbum;
 
-    @Transient
-    private List<Cancion> canciones;
-
-    @JsonIgnoreProperties(value = {"genero"})
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<GeneroCancion> generoCancion;
+    @JsonIgnoreProperties("generos")
+    @ManyToMany(mappedBy = "generos",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Artista> artistas;
 
 
     @Temporal(TemporalType.DATE)
@@ -52,8 +48,7 @@ public class Genero {
     public Genero(){
         this.albumes = new ArrayList<>();
         this.generoAlbum = new ArrayList<>();
-        this.canciones = new ArrayList<>();
-        this.generoCancion = new ArrayList<>();
+        this.artistas = new ArrayList<>();
     }
 
     @PrePersist
@@ -97,14 +92,6 @@ public class Genero {
         return this.foto != null ? Arrays.hashCode(this.foto) : null;
     }
 
-    public void addCancion(Cancion cancion) {
-        this.canciones.add(cancion);
-    }
-
-    public void removeCancion(Cancion cancion) {
-        this.canciones.remove(cancion);
-    }
-
     public void addAlbum(Album album) {
         this.albumes.add(album);
     }
@@ -129,22 +116,6 @@ public class Genero {
         this.generoAlbum = generoAlbum;
     }
 
-    public List<Cancion> getCanciones() {
-        return canciones;
-    }
-
-    public void setCanciones(List<Cancion> canciones) {
-        this.canciones = canciones;
-    }
-
-    public List<GeneroCancion> getGeneroCancion() {
-        return generoCancion;
-    }
-
-    public void setGeneroCancion(List<GeneroCancion> generoCancion) {
-        this.generoCancion = generoCancion;
-    }
-
     public void addGeneroAlbum(GeneroAlbum generoAlbum) {
         this.generoAlbum.add(generoAlbum);
     }
@@ -153,12 +124,21 @@ public class Genero {
         this.generoAlbum.remove(generoAlbum);
     }
 
-    public void addGeneroCancion(GeneroCancion generoCancion) {
-        this.generoCancion.add(generoCancion);
+    public List<Artista> getArtistas() {
+        return artistas;
     }
 
-    public void removeGeneroCancion(GeneroCancion generoCancion) {
-        this.generoCancion.remove(generoCancion);
+    public void setArtistas(List<Artista> artistas) {
+        this.artistas = artistas;
+    }
+
+    public void addArtista(Artista artista) {
+        this.artistas.add(artista);
+        artista.getGeneros().add(this);
+    }
+
+    public void removeArtista(Artista artista) {
+        this.artistas.remove(artista);
     }
 
     @Override

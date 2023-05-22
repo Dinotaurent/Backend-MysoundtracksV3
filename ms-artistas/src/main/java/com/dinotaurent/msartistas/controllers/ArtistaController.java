@@ -186,13 +186,15 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
     }
 
     @PutMapping("/{id}/asignar-generos")
-    public ResponseEntity<?> asignarGenero(@PathVariable Long id, @RequestBody List<Genero> generos){
-
+    public ResponseEntity<?> asignarGenero(@PathVariable Long id, @RequestBody List<Genero> generos) {
         Optional<Artista> o = service.findById(id);
 
-        if(o.isPresent()){
+        if (o.isPresent()) {
             Artista artistaBd = o.get();
-            generos.forEach(artistaBd::addGenero);
+            for (Genero genero : generos) {
+                artistaBd.getGeneros().add(genero);
+                genero.getArtistas().add(artistaBd);
+            }
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(artistaBd));
         }
         return ResponseEntity.notFound().build();
@@ -206,6 +208,7 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
         if(o.isPresent()){
             Artista artistaBd = o.get();
             artistaBd.removeGenero(genero);
+            genero.getArtistas().remove(artistaBd);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(artistaBd));
         }
         return ResponseEntity.notFound().build();
