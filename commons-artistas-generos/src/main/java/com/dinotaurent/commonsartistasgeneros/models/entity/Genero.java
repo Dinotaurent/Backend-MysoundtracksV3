@@ -1,6 +1,5 @@
 package com.dinotaurent.commonsartistasgeneros.models.entity;
 
-import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -24,15 +23,11 @@ public class Genero {
     @Size(min = 4, max = 14)
     private String nombre;
 
-    @Transient
-    private List<Album> albumes;
-
-    @JsonIgnoreProperties(value = {"genero"})
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<GeneroAlbum> generoAlbum;
-
     @JsonIgnoreProperties("generos")
-    @ManyToMany(mappedBy = "generos",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "artistas_generos",
+            joinColumns = @JoinColumn(name = "genero_id"),
+            inverseJoinColumns = @JoinColumn(name = "artista_id"))
     private List<Artista> artistas;
 
 
@@ -46,8 +41,6 @@ public class Genero {
     private byte[] foto;
 
     public Genero(){
-        this.albumes = new ArrayList<>();
-        this.generoAlbum = new ArrayList<>();
         this.artistas = new ArrayList<>();
     }
 
@@ -92,38 +85,6 @@ public class Genero {
         return this.foto != null ? Arrays.hashCode(this.foto) : null;
     }
 
-    public void addAlbum(Album album) {
-        this.albumes.add(album);
-    }
-
-    public void removeAlbum(Album album) {
-        this.albumes.remove(album);
-    }
-
-    public List<Album> getAlbumes() {
-        return albumes;
-    }
-
-    public void setAlbumes(List<Album> albumes) {
-        this.albumes = albumes;
-    }
-
-    public List<GeneroAlbum> getGeneroAlbum() {
-        return generoAlbum;
-    }
-
-    public void setGeneroAlbum(List<GeneroAlbum> generoAlbum) {
-        this.generoAlbum = generoAlbum;
-    }
-
-    public void addGeneroAlbum(GeneroAlbum generoAlbum) {
-        this.generoAlbum.add(generoAlbum);
-    }
-
-    public void removeGeneroAlbum(GeneroAlbum generoAlbum) {
-        this.generoAlbum.remove(generoAlbum);
-    }
-
     public List<Artista> getArtistas() {
         return artistas;
     }
@@ -134,7 +95,6 @@ public class Genero {
 
     public void addArtista(Artista artista) {
         this.artistas.add(artista);
-        artista.getGeneros().add(this);
     }
 
     public void removeArtista(Artista artista) {
@@ -146,9 +106,10 @@ public class Genero {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Genero g)) {
+        if (!(obj instanceof Genero)) {
             return false;
         }
+        Genero g = (Genero) obj;
         return this.id != null && this.id.equals(g.getId());
     }
 }

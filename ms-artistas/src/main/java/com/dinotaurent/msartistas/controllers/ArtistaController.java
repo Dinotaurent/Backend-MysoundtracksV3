@@ -130,7 +130,7 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
 
         if (o.isPresent()) {
             Artista artistaBd = o.get();
-            albumes.forEach( al -> {
+            albumes.forEach(al -> {
                 ArtistaAlbum artistaAlbum = new ArtistaAlbum();
                 artistaAlbum.setAlbumId(al.getId());
                 artistaAlbum.setArtista(artistaBd);
@@ -161,7 +161,7 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
 
         if (o.isPresent()) {
             Artista artistaBd = o.get();
-            canciones.forEach( c -> {
+            canciones.forEach(c -> {
                 ArtistaCancion artistaCancion = new ArtistaCancion();
                 artistaCancion.setCancionId(c.getId());
                 artistaCancion.setArtista(artistaBd);
@@ -202,10 +202,10 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
 
 
     @PutMapping("/{id}/remover-genero")
-    public ResponseEntity<?> removerGenero(@PathVariable Long id, @RequestBody Genero genero){
+    public ResponseEntity<?> removerGenero(@PathVariable Long id, @RequestBody Genero genero) {
         Optional<Artista> o = service.findById(id);
 
-        if(o.isPresent()){
+        if (o.isPresent()) {
             Artista artistaBd = o.get();
             artistaBd.removeGenero(genero);
             genero.getArtistas().remove(artistaBd);

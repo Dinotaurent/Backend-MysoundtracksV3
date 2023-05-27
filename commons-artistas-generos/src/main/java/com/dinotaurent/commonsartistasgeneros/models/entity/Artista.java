@@ -39,7 +39,7 @@ public class Artista {
     private List<ArtistaAlbum> artistaAlbum;
 
     @JsonIgnoreProperties("artistas")
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "artistas_generos",
             joinColumns = @JoinColumn(name = "artista_id"),
             inverseJoinColumns = @JoinColumn(name = "genero_id"))
@@ -137,7 +137,6 @@ public class Artista {
 
     public void addGenero(Genero genero) {
         this.generos.add(genero);
-        genero.getArtistas().add(this);
     }
 
     public void removeGenero(Genero genero) {

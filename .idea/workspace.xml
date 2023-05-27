@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="correcion al mensaje de la validacion de campos">
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se detecta error de diseño y se corrigen los microservicios correspondientes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/GeneroCancion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/GeneroAlbum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IGeneroAlbumFeingClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/clients/IGeneroCancionFeingClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/CancionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/CancionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/ICancionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/ICancionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-generos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/MsGenerosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/MsGenerosApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/dao/IGeneroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/dao/IGeneroDao.java" afterDir="false" />
@@ -82,7 +83,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MsGatewayApplication">
+  <component name="RunManager" selected="Application.MsArtistasApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
       <module name="ms-albumes" />
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684281847023</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Se detecta error de diseño y se corrigen los microservicios correspondientes.">
+      <created>1684779893274</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684779893274</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,7 +271,9 @@
     <MESSAGE value="adelanto de ms-canciones" />
     <MESSAGE value="Se agrega mayor capacidad de almacenamiento para la foto de todos los microservicios." />
     <MESSAGE value="correcion al mensaje de la validacion de campos" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcion al mensaje de la validacion de campos" />
+    <MESSAGE value="Se detecta error de diseño y se corriguen los microservicios correspondientes." />
+    <MESSAGE value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

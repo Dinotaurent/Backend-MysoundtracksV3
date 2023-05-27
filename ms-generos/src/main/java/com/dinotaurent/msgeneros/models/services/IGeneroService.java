@@ -8,8 +8,4 @@ import java.util.List;
 
 
 public interface IGeneroService extends ICommonService<Genero> {
-
-    void eliminarGeneroAlbumXId(Long id);
-
-//    List<Artista> findArtistaByGeneroId(Long id);
 }
