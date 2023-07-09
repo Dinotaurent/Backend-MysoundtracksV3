@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -41,8 +42,8 @@ public class CancionController extends CommonController<Cancion, ICancionService
         return super.crear(cancion, result);
     }
 
-    @PutMapping("/actualizar-con-foto/{id}")
-    public ResponseEntity<?> actualizarConFoto(@PathVariable Long id, @Valid Cancion cancion, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
+    @PutMapping("/actualizar-con-pista/{id}")
+    public ResponseEntity<?> actualizarConPista(@PathVariable Long id, @Valid Cancion cancion, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
         Optional<Cancion> o = service.findById(id);
 
         if (o.isPresent()) {
@@ -80,5 +81,17 @@ public class CancionController extends CommonController<Cancion, ICancionService
         }
         return ResponseEntity.notFound().build();
     }
+
+//    @PutMapping("/{id}/asignar-album")
+//    public ResponseEntity<?> asignarAlbum(@PathVariable Long id, @RequestBody Album album){
+//        Optional<Cancion> o = service.findById(id);
+//
+//        if(o.isPresent()){
+//            Cancion cancioBd = o.get();
+//            cancioBd.addAlbum(album);
+//            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(albumBd));
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
 
 }

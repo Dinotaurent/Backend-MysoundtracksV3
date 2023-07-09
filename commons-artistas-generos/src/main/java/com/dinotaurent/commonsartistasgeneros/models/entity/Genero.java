@@ -20,7 +20,7 @@ public class Genero {
     private Long id;
 
     @NotBlank
-    @Size(min = 4, max = 14)
+    @Size(min = 4, max = 20)
     private String nombre;
 
     @JsonIgnoreProperties("generos")

@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se detecta error de diseño y se corrigen los microservicios correspondientes.">
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se varias mejoras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/GeneroAlbum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IGeneroAlbumFeingClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/MsGenerosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/MsGenerosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/dao/IGeneroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/dao/IGeneroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/GeneroServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/GeneroServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/IGeneroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/models/services/IGeneroService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +77,15 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Proyectos de codigo/Java/Backend-ms-cursos-parent-master&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MsArtistasApplication">
+  <component name="RunManager" selected="Application.MsGatewayApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
       <module name="ms-albumes" />
@@ -256,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684779893274</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Se varias mejoras">
+      <created>1685170046910</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685170046911</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -273,7 +282,8 @@
     <MESSAGE value="correcion al mensaje de la validacion de campos" />
     <MESSAGE value="Se detecta error de diseño y se corriguen los microservicios correspondientes." />
     <MESSAGE value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
+    <MESSAGE value="Se varias mejoras" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se varias mejoras" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

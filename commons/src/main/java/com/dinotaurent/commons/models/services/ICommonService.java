@@ -14,10 +14,11 @@ public interface ICommonService<E> {
 
     Optional<E> findById(Long id);
 
+    List<E> findByNombreContaining(String termino);
+
     E save(E entity);
 
     void deleteById(Long id);
 
-    List<E> findByNombreContaining(String termino);
 
 }

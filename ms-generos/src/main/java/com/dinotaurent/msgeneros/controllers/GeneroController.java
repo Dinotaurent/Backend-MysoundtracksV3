@@ -86,9 +86,7 @@ public class GeneroController extends CommonController<Genero, IGeneroService> {
 
         if (o.isPresent()) {
             Genero generoBd = o.get();
-            for (Artista artista : artistas) {
-                generoBd.getArtistas().add(artista);
-            }
+            artistas.forEach(generoBd::addArtista);
 
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(generoBd));
         }

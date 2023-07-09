@@ -20,12 +20,12 @@ spring:
       ribbon:
         enable: false
   datasource:
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     password: admin
-    url: jdbc:postgresql://localhost/bd-mysoundtracks?useSSL=false
-    username: postgres
+    url: jdbc:mysql://localhost/bd-mysoundtracks2?useSSL=false
+    username: root
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
   servlet:

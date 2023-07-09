@@ -25,9 +25,12 @@ public class Cancion {
     @JsonIgnore
     private byte[] pista;
 
-    @JsonIgnoreProperties(value = {"canciones"})
+    @JsonIgnoreProperties(value = {"canciones","fotoHashCode","handler", "hibernateLazyInitializer"}, allowSetters = true)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "album_id")
+//    @JoinColumn(name = "album_id")
+    @JoinTable(name = "albumes_canciones",
+            joinColumns = @JoinColumn(name = "canciones_id"),
+            inverseJoinColumns = @JoinColumn(name = "album_id"))
     private Album album;
 
     @Temporal(TemporalType.DATE)
@@ -75,6 +78,14 @@ public class Cancion {
     public void setAlbum(Album album) {
         this.album = album;
     }
+
+//    public void addAlbum(Album album) {
+//        this.album.);
+//    }
+//
+//    public void removeCancion(Cancion cancion) {
+//        this.canciones.remove(cancion);
+//    }
 
     public Date getCreateAt() {
         return createAt;

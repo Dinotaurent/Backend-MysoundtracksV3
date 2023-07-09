@@ -22,7 +22,7 @@ public class Artista {
     private Long id;
 
     @NotBlank
-    @Size(min = 3, max = 10)
+    @Size(min = 3, max = 16)
     private String nombre;
 
     @Transient

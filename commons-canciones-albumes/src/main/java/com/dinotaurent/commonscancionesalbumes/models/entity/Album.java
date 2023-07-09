@@ -20,11 +20,14 @@ public class Album {
     private Long id;
 
     @NotBlank
-    @Size(min = 4, max = 15)
+    @Size(min = 4, max = 20)
     private String nombre;
 
-    @JsonIgnoreProperties(value = {"album"}, allowSetters = true)
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties(value = {"album","pistaHashCode","handler", "hibernateLazyInitializer"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "albumes_canciones",
+            joinColumns = @JoinColumn(name = "album_id"),
+            inverseJoinColumns = @JoinColumn(name = "canciones_id"))
     private List<Cancion> canciones;
 
     @Lob
