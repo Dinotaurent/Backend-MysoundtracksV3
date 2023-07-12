@@ -82,16 +82,28 @@ public class CancionController extends CommonController<Cancion, ICancionService
         return ResponseEntity.notFound().build();
     }
 
-//    @PutMapping("/{id}/asignar-album")
-//    public ResponseEntity<?> asignarAlbum(@PathVariable Long id, @RequestBody Album album){
-//        Optional<Cancion> o = service.findById(id);
-//
-//        if(o.isPresent()){
-//            Cancion cancioBd = o.get();
-//            cancioBd.addAlbum(album);
-//            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(albumBd));
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
+    @PutMapping("/{id}/asignar-album")
+    public ResponseEntity<?> asignarAlbum(@PathVariable Long id, @RequestBody Album album){
+        Optional<Cancion> o = service.findById(id);
+
+        if(o.isPresent()){
+            Cancion cancionBd = o.get();
+            cancionBd.setAlbum(album);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(cancionBd));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{id}/remover-album")
+    public ResponseEntity<?> removerAlbum(@PathVariable Long id, @RequestBody Album album){
+        Optional<Cancion> o = service.findById(id);
+
+        if(o.isPresent()){
+            Cancion cancionBd = o.get();
+            cancionBd.setAlbum(null);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(cancionBd));
+        }
+        return ResponseEntity.notFound().build();
+    }
 
 }

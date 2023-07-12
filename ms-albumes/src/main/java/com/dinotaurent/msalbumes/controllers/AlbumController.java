@@ -1,6 +1,8 @@
 package com.dinotaurent.msalbumes.controllers;
 
 import com.dinotaurent.commons.controllers.CommonController;
+import com.dinotaurent.commonsartistasgeneros.models.entity.Artista;
+import com.dinotaurent.commonsartistasgeneros.models.entity.ArtistaCancion;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.dinotaurent.msalbumes.models.services.IAlbumService;
@@ -88,11 +90,18 @@ public class AlbumController extends CommonController<Album, IAlbumService> {
         if (o.isPresent()) {
             Album albumBd = o.get();
             canciones.forEach(albumBd::addCancion);
-//            canciones.forEach(cancion -> {
-//                cancion.setAlbum(albumBd);
-//                albumBd.addCancion(cancion);
-//            });
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(albumBd));
+        }
+        return ResponseEntity.notFound().build();
+    }
 
+    @PutMapping("/{id}/remover-cancion")
+    public ResponseEntity<?> removerCancion(@PathVariable Long id, @RequestBody Cancion cancion) {
+        Optional<Album> o = service.findById(id);
+
+        if (o.isPresent()) {
+            Album albumBd = o.get();
+            albumBd.removeCancion(cancion);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(albumBd));
         }
         return ResponseEntity.notFound().build();

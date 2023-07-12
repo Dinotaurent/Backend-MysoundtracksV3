@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="Se varias mejoras">
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="varias mejoras a las relaciones,motores de bd y logica en general">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Artista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-artistas-generos/src/main/java/com/dinotaurent/commonsartistasgeneros/models/entity/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-canciones-albumes/src/main/java/com/dinotaurent/commonscancionesalbumes/models/entity/Cancion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/CrudAndSortingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/dinotaurent/commons/models/services/ICommonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-generos/src/main/java/com/dinotaurent/msgeneros/controllers/GeneroController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +73,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MsGatewayApplication">
+  <component name="RunManager" selected="Application.MsArtistasApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
       <module name="ms-albumes" />
@@ -265,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1685170046911</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="varias mejoras a las relaciones,motores de bd y logica en general">
+      <option name="closed" value="true" />
+      <created>1688934042151</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688934042151</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -283,7 +279,8 @@
     <MESSAGE value="Se detecta error de diseño y se corriguen los microservicios correspondientes." />
     <MESSAGE value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
     <MESSAGE value="Se varias mejoras" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se varias mejoras" />
+    <MESSAGE value="varias mejoras a las relaciones,motores de bd y logica en general" />
+    <option name="LAST_COMMIT_MESSAGE" value="varias mejoras a las relaciones,motores de bd y logica en general" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
