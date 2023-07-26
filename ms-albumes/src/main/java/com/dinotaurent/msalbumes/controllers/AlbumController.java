@@ -1,8 +1,6 @@
 package com.dinotaurent.msalbumes.controllers;
 
 import com.dinotaurent.commons.controllers.CommonController;
-import com.dinotaurent.commonsartistasgeneros.models.entity.Artista;
-import com.dinotaurent.commonsartistasgeneros.models.entity.ArtistaCancion;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.dinotaurent.msalbumes.models.services.IAlbumService;
@@ -33,6 +31,12 @@ public class AlbumController extends CommonController<Album, IAlbumService> {
         }
         return ResponseEntity.notFound().build();
 
+    }
+    @GetMapping("/obtener-canciones-x-artistaId/{artistaId}")
+    public ResponseEntity<?> obtenerCancionesXArtistaId(@PathVariable Long artistaId){
+        List<Long> ids = service.buscarCancionesXArtista(artistaId);
+        System.out.println(ids);
+        return ResponseEntity.ok(service.findByIdInAndAlbumIsNull(ids));
     }
 
     @PostMapping("/crear-con-foto")

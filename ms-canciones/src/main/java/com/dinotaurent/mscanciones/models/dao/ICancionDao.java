@@ -12,4 +12,6 @@ public interface ICancionDao extends CrudAndSortingRepository<Cancion, Long> {
     List<Cancion> findAllByOrderByIdAsc();
 
     Page<Cancion> findAllByOrderByIdAsc(Pageable pageable);
+
+    List<Cancion> findByIdInAndAlbumIsNull(List<Long> ids);
 }

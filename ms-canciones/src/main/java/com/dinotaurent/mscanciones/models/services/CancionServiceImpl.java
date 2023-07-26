@@ -19,6 +19,12 @@ public class CancionServiceImpl extends CommonServiceImpl<Cancion, ICancionDao> 
 
     @Override
     @Transactional(readOnly = true)
+    public List<Cancion> findByIdInAndAlbumIsNull(List<Long> ids) {
+        return dao.findByIdInAndAlbumIsNull(ids);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<Cancion> findAll() {
         return dao.findAllByOrderByIdAsc();
     }

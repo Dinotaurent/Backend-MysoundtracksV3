@@ -34,6 +34,11 @@ public class CancionController extends CommonController<Cancion, ICancionService
 
     }
 
+    @GetMapping("/buscar-x-ids")
+    public ResponseEntity<?> buscarXIds(@RequestParam List<Long> ids){
+        return ResponseEntity.ok(service.findByIdInAndAlbumIsNull(ids));
+    }
+
     @PostMapping("/crear-con-pista")
     public ResponseEntity<?> crearConPista(@Valid Cancion cancion, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
         if (!archivo.isEmpty()) {

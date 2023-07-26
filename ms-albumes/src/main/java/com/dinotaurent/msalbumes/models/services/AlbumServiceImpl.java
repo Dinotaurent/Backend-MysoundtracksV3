@@ -2,7 +2,9 @@ package com.dinotaurent.msalbumes.models.services;
 
 import com.dinotaurent.commons.models.services.CommonServiceImpl;
 import com.dinotaurent.commonscancionesalbumes.models.entity.Album;
+import com.dinotaurent.commonscancionesalbumes.models.entity.Cancion;
 import com.dinotaurent.msalbumes.clients.IArtistaAlbumFeingClient;
+import com.dinotaurent.msalbumes.clients.ICancionAlbumFeingClient;
 import com.dinotaurent.msalbumes.models.dao.IAlbumDao;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,19 @@ import java.util.List;
 public class AlbumServiceImpl extends CommonServiceImpl<Album, IAlbumDao> implements IAlbumService {
     @Autowired
     private IArtistaAlbumFeingClient artistaClient;
+
+    @Autowired
+    private ICancionAlbumFeingClient cancionService;
+
+    @Override
+    public List<Long> buscarCancionesXArtista(Long id) {
+        return artistaClient.buscarCancionesXArtista(id);
+    }
+
+    @Override
+    public List<Cancion> findByIdInAndAlbumIsNull(List<Long> ids){
+        return cancionService.findByIdInAndAlbumIsNull(ids);
+    }
 
     @Override
     @Transactional(readOnly = true)

@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 public class ArtistaController extends CommonController<Artista, IArtistaService> {
@@ -74,6 +75,21 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
         if (o.isPresent() && o.get().getFoto() != null) {
             Resource imagen = new ByteArrayResource(o.get().getFoto());
             return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/buscar-canciones-x-artista/{id}")
+    public ResponseEntity<?> buscarCancionesXArtista(@PathVariable Long id){
+        Optional<Artista> o = service.findById(id);
+
+        if(o.isPresent()){
+            Artista artistaBd = o.get();
+            List<Long> cancionIds = artistaBd.getArtistaCancion()
+                    .stream()
+                    .map(ArtistaCancion::getCancionId)
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(cancionIds);
         }
         return ResponseEntity.notFound().build();
     }
@@ -167,6 +183,7 @@ public class ArtistaController extends CommonController<Artista, IArtistaService
                 artistaCancion.setArtista(artistaBd);
                 artistaBd.addArtistaCancion(artistaCancion);
             });
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.save(artistaBd));
         }
         return ResponseEntity.notFound().build();
     }

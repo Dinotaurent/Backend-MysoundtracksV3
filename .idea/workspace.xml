@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="varias mejoras a las relaciones,motores de bd y logica en general">
+    <list default="true" id="47efe444-41a1-4cdd-9213-d5598100b1f4" name="Changes" comment="se completa la relacion bidireccional de albumes y canciones.">
+      <change afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/ICancionAlbumFeingClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IArtistaAlbumFeingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/clients/IArtistaAlbumFeingClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/controllers/AlbumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/AlbumServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-albumes/src/main/java/com/dinotaurent/msalbumes/models/services/IAlbumService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-artistas/src/main/java/com/dinotaurent/msartistas/controllers/ArtistaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/controllers/CancionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/dao/ICancionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/dao/ICancionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/CancionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/CancionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/ICancionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-canciones/src/main/java/com/dinotaurent/mscanciones/models/services/ICancionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -73,7 +82,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MsArtistasApplication">
+  <component name="RunManager" selected="Application.MsCancionesApplication">
     <configuration name="MsAlbumesApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dinotaurent.msalbumes.MsAlbumesApplication" />
       <module name="ms-albumes" />
@@ -261,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688934042151</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="se completa la relacion bidireccional de albumes y canciones.">
+      <option name="closed" value="true" />
+      <created>1689156419298</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689156419298</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -280,7 +297,8 @@
     <MESSAGE value="Se detecta error de diseño y se corrigen los microservicios correspondientes." />
     <MESSAGE value="Se varias mejoras" />
     <MESSAGE value="varias mejoras a las relaciones,motores de bd y logica en general" />
-    <option name="LAST_COMMIT_MESSAGE" value="varias mejoras a las relaciones,motores de bd y logica en general" />
+    <MESSAGE value="se completa la relacion bidireccional de albumes y canciones." />
+    <option name="LAST_COMMIT_MESSAGE" value="se completa la relacion bidireccional de albumes y canciones." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
